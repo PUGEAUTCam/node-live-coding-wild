@@ -8,9 +8,9 @@ module.exports = {
             .getRepository(Skill)
             .save(req.body)
          res.send("Skill Created")
-
       } catch (error) {
-         res.send("error")
+         console.log(error);
+         res.status(400).json({ error })
       }
    },
    read: async (req, res) => {
@@ -20,7 +20,8 @@ module.exports = {
             .find()
          res.send(data);
       } catch (error) {
-         res.send("error")
+         console.log(error);
+         res.status(400).json({ error })
       }
    },
    delete: async (req, res) => {
@@ -30,7 +31,8 @@ module.exports = {
             .delete(req.body.id)
          res.send("Skill supprimes");
       } catch (error) {
-         res.send("error")
+         console.log(error);
+         res.status(400).json({ error })
       }
    },
    update: async (req, res) => {
@@ -40,7 +42,8 @@ module.exports = {
             .update(req.body.id, req.body.newData)
          res.send("Skill modifies");
       } catch (error) {
-         res.send("error")
+         console.log(error);
+         res.status(400).json({ error })
       }
    }
 }

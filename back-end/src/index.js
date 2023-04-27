@@ -18,7 +18,7 @@ app.get("/", (req, res) => {
 //routes-Wilder
 app.post("/api/wilder", wilderController.create)
 app.get("/api/wilder", wilderController.read)
-app.delete("/api/wilder", wilderController.delete)
+app.delete("/api/wilder/:id", wilderController.delete)
 app.put("/api/wilder", wilderController.update)
 //routes-Skill
 app.post("/api/skill", skillController.create)

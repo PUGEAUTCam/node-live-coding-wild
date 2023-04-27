@@ -3,8 +3,8 @@ Content-Type: application/json
 
 {
    "grade": 3,
-   "wilder": "Camille",
-   "skill": "HTML"
+   "wilder": "test delete",
+   "skill": "JS"
 }
 ###
 GET http://localhost:5001/api/grade

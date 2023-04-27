@@ -8,7 +8,7 @@ const Wilder = ({ wilder, onDelete }) => {
 
    const handleDelete = async (id) => {
       try {
-         let res = await axios.delete(`http://localhost:5001/api/wilder`, { data: { id: id } })
+         await axios.delete(`http://localhost:5001/api/wilder/${id}`)
          await onDelete()
       } catch (error) {
          console.log(error.response);

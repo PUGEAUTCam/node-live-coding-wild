@@ -2,7 +2,7 @@ POST http://localhost:5001/api/skill
 Content-Type: application/json
 
 {
-   "name": "Menage"
+   "name": "JS"
 }
 ###
 GET http://localhost:5001/api/skill

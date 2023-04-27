@@ -2,8 +2,8 @@ POST http://localhost:5001/api/wilder
 Content-Type: application/json
 
 {
-   "name": "coucou",
-   "city": "Fromage"
+   "name": "test delete",
+   "city": "test"
 }
 ###
 GET http://localhost:5001/api/wilder
@@ -23,5 +23,5 @@ DELETE http://localhost:5001/api/wilder
 Content-Type: application/json
 
 {
-   "id": 13
+   "id": 2
 }

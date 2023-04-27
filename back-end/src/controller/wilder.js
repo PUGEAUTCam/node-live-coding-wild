@@ -12,7 +12,7 @@ module.exports = {
 
       } catch (error) {
          console.log(error);
-         res.send("Error while creating wilder");
+         res.status(400).json({ error });
       }
    },
    read: async (req, res) => {
@@ -36,13 +36,12 @@ module.exports = {
             }
             console.log(result);
             return result
-
          })
          res.send(data)
 
       } catch (error) {
          console.log(error)
-         res.send("Error while reading wilders");
+         res.status(400).json({ error })
       }
    },
    update: async (req, res) => {
@@ -53,17 +52,18 @@ module.exports = {
 
          res.send("updated");
       } catch (error) {
-         res.send("Error while updated wilders");
+         console.log(error);
+         res.status(400).json({ error })
       }
    },
    delete: async (req, res) => {
       try {
-         await dataSource
-            .getRepository(Wilder)
-            .delete(req.body)
+         await dataSource.getRepository(Grade).delete(req.params.id)
+         await dataSource.getRepository(Wilder).delete(req.params.id);
          res.send("deleted");
       } catch (error) {
-         res.send("Error while deleted wilder");
+         console.log(error);
+         res.send("error while deleting wilder");
       }
-   },
+   }
 }

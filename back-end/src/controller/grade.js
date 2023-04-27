@@ -25,7 +25,7 @@ module.exports = {
 
       } catch (error) {
          console.log(error);
-         res.send("Error while creating skill");
+         res.status(400).json({ error })
       }
    },
    read: async (req, res) => {
@@ -35,7 +35,8 @@ module.exports = {
             .find()
          res.send(gradesFromDB);
       } catch (error) {
-         res.send("Error while reading grades");
+         console.log(error);
+         res.status(400).json({ error })
       }
    },
 }

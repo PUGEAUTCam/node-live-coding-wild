@@ -23,7 +23,7 @@ const Wilders = () => {
 
    return (
       <main className={styles.container}>
-         <AddWilder onUpdate={(data) => setWilders([...wilders, data])} />
+         <AddWilder onUpdate={() => fetchData()} />
          <h2>Wilders</h2>
          <section className={style["card-row"]}>
             {wilders?.map((wilder, index) =>
