@@ -6,6 +6,7 @@ const AddWilder = ({ onUpdate }) => {
    const [name, setName] = useState("");
    const [city, setCity] = useState("");
 
+
    const handleSubmit = async (e) => {
       e.preventDefault();
       try {

@@ -7,7 +7,6 @@ import axios from "axios";
 
 const Wilders = () => {
    const [wilders, setWilders] = useState([])
-   console.log(wilders);
 
    const fetchData = async () => {
       try {
