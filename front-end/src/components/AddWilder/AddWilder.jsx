@@ -1,37 +1,41 @@
 import React, { useState } from 'react';
 import axios from "axios";
+import styles from "./AddWilder.module.css"
 
-const AddWilder = () => {
-
+const AddWilder = ({ onUpdate }) => {
    const [name, setName] = useState("");
    const [city, setCity] = useState("");
 
-   const handleSubmit = (e) => {
+   const handleSubmit = async (e) => {
       e.preventDefault();
       try {
-         axios.post("http://localhost:5001/api/wilder", { name, city });
+         await axios.post("http://localhost:5001/api/wilder", { name, city });
+         onUpdate()
+         reset();
       } catch (error) {
-         console.log(error);
+         console.log(error.response);
       }
-   }
+   };
 
+   const reset = () => {
+      setName("")
+      setCity("")
+   }
    return (
       <form onSubmit={handleSubmit}>
-         <label>Name :</label>
+         <label>Name</label>
          <input
             type="text"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            placeholder='Lucia...'
          />
-         <label>City :</label>
+         <label>City</label>
          <input
             type="text"
             value={city}
             onChange={(e) => setCity(e.target.value)}
-            placeholder='Rome...'
          />
-         <button>Ajouter un Wilder</button>
+         <button>Add Wilder</button>
       </form>
    );
 };

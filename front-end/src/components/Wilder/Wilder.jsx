@@ -2,8 +2,18 @@ import React from 'react';
 import styles from "./Wilder.module.css"
 import avatar from "../../assets/avatar.png"
 import Skill from '../Skill/Skill';
+import axios from 'axios';
 
-const Wilder = ({ wilder }) => {
+const Wilder = ({ wilder, onDelete }) => {
+
+   const handleDelete = async (id) => {
+      try {
+         await axios.delete(`http://localhost:5001/api/wilder`, { data: { id: id } })
+         await onDelete()
+      } catch (error) {
+         console.log(error.response);
+      }
+   }
 
    return (
       <article className={styles.card}>
@@ -25,6 +35,9 @@ const Wilder = ({ wilder }) => {
                />
             )}
          </ul>
+         <div className={styles.button}>
+            <button onClick={() => handleDelete(wilder.id)}>Supprimer</button>
+         </div>
       </article>
    );
 };

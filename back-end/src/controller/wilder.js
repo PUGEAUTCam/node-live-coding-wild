@@ -5,10 +5,10 @@ const Grade = require("../entity/Grade")
 module.exports = {
    create: async (req, res) => {
       try {
-         await dataSource
+         const data = await dataSource
             .getRepository(Wilder)
             .save(req.body);
-         res.send("Created wilder");
+         res.send(data);
 
       } catch (error) {
          console.log(error);
@@ -42,7 +42,7 @@ module.exports = {
 
       } catch (error) {
          console.log(error)
-         res.send("Error while creating wilder");
+         res.send("Error while reading wilders");
       }
    },
    update: async (req, res) => {
@@ -53,7 +53,7 @@ module.exports = {
 
          res.send("updated");
       } catch (error) {
-         res.send("Error while creating wilder");
+         res.send("Error while updated wilders");
       }
    },
    delete: async (req, res) => {
@@ -63,7 +63,7 @@ module.exports = {
             .delete(req.body)
          res.send("deleted");
       } catch (error) {
-         res.send("Error while creating wilder");
+         res.send("Error while deleted wilder");
       }
    },
 }
