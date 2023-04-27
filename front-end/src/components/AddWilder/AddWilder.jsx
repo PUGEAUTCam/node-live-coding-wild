@@ -9,8 +9,8 @@ const AddWilder = ({ onUpdate }) => {
    const handleSubmit = async (e) => {
       e.preventDefault();
       try {
-         await axios.post("http://localhost:5001/api/wilder", { name, city });
-         onUpdate()
+         let res = await axios.post("http://localhost:5001/api/wilder", { name, city });
+         onUpdate(res.data)
          reset();
       } catch (error) {
          console.log(error.response);

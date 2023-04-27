@@ -7,6 +7,7 @@ import axios from "axios";
 
 const Wilders = () => {
    const [wilders, setWilders] = useState([])
+   console.log(wilders);
 
    const fetchData = async () => {
       try {
@@ -23,7 +24,7 @@ const Wilders = () => {
 
    return (
       <main className={styles.container}>
-         <AddWilder onUpdate={() => fetchData()} />
+         <AddWilder onUpdate={(data) => setWilders([...wilders, data])} />
          <h2>Wilders</h2>
          <section className={style["card-row"]}>
             {wilders?.map((wilder, index) =>

@@ -28,7 +28,7 @@ const Wilder = ({ wilder, onDelete }) => {
          </p>
          <h4>Wild Skills</h4>
          <ul className={styles.skills}>
-            {wilder.skills.map((skill, index) =>
+            {wilder?.skills?.map((skill, index) =>
                <Skill
                   key={index}
                   skill={skill}
