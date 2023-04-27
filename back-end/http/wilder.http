@@ -2,7 +2,7 @@ POST http://localhost:5001/api/wilder
 Content-Type: application/json
 
 {
-   "name": "Camille"
+   "name": "Omelette"
 }
 ###
 GET http://localhost:5001/api/wilder
