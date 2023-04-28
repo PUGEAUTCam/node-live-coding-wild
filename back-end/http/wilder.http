@@ -23,5 +23,5 @@ DELETE http://localhost:5001/api/wilder
 Content-Type: application/json
 
 {
-   "id": 2
+   "id": 1
 }

@@ -7,6 +7,7 @@ import axios from 'axios';
 const Wilder = ({ wilder, onDelete }) => {
 
    const handleDelete = async (id) => {
+      console.log(id);
       try {
          await axios.delete(`http://localhost:5001/api/wilder/${id}`)
          await onDelete()

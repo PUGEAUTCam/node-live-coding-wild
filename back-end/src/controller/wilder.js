@@ -63,7 +63,7 @@ module.exports = {
          res.send("deleted");
       } catch (error) {
          console.log(error);
-         res.send("error while deleting wilder");
+         res.status(400).json({ error })
       }
    }
 }
