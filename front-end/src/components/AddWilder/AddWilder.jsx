@@ -59,6 +59,7 @@ const AddWilder = ({ onUpdate }) => {
             value={grade}
             onChange={(e) => setGrade(e.target.value)}
             className={styles.gradeinput}
+            required
          />
          <button>Add Wilder</button>
       </form>
